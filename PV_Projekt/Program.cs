@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-           /* Produkt produkt = new("neco", 69.69, false);
+            Produkt produkt = new("neco", 69.69, false);
 
             ProduktDao dao = new();
 
