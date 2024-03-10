@@ -83,7 +83,7 @@ Kód je řádně okomentovaný, jak obyčejnýma komentářema, tak i komentář
 
 Nejde smazat id 1
 
-Občas vypadne spojení s databází při provádění nějakého příkazu (většinou na konci)
+Občas vypadne spojení s databází při provádění nějakého příkazu (většinou na konci), nešlo mi to vyřešit, tudíž to řeším tak, že exitnu konzoli
 
 
 
