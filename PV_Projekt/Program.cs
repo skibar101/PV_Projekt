@@ -12,7 +12,7 @@
 
             var all = dao.GetAll().ToList();
 
-            all.ForEach(a => Console.WriteLine(a));*/
+            all.ForEach(a => Console.WriteLine(a));
         }
     }
 }
