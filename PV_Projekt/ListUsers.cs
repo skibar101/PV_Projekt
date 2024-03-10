@@ -8,25 +8,35 @@ namespace PV_Projekt
 {
     internal class ListUsers : ICommand
     {
+
+        /// <summary>
+        /// Metoda která vypíše všechny zákazníky
+        /// </summary>
         void ICommand.Execute()
         {
             ZakaznikDao dao = new ZakaznikDao();
 
             var all = dao.GetAll().ToList();
 
-            Console.WriteLine(all);
+            all.ForEach(c => Console.WriteLine(c));
         }
-
+        /// <summary>
+        /// Info o metodě
+        /// </summary>
         string ICommand.GetInfo()
         {
-            return "Neco o prikazu, pripadne popsat argumenty";
+            return "vypíše všechny zákazníky";
         }
-
+        // <summary>
+        /// Jméno v rozhraní
+        /// </summary>
         string ICommand.GetName()
         {
-            return "ListUsers";
+            return "Vypsaní všech zákazníků ";
         }
-
+        // <summary>
+        /// Validace
+        /// </summary>
         bool ICommand.ValidateInput(string input)
         {
            

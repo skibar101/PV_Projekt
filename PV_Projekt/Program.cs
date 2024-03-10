@@ -4,15 +4,19 @@
     {
         static void Main(string[] args)
         {
-            Produkt produkt = new("neco", 69.69, false);
+            /// <summary>
+            ///Zde spouštím třídu CommandInterface a následně sem přidávám položky, které tam chci mít.
+            /// </summary>
 
-            ProduktDao dao = new();
+            ICommand listUsersCommand = new ListUsers(); // Vytvoření seznamu příkazů pro získáni všech uživatelů
+            ICommand addCustomerCommand = new AddCustomer();// Vytvoření seznamu příkazů pro přidaní zákazníka
+            ICommand deleteCustomerCommand = new DeleteCustomer ();// Vytvoření seznamu příkazů pro smazání zákazníka
+            ICommand updateCustomerCommand = new UpdateCustomer();// Vytvoření seznamu příkazů pro aktualizaci údajů zákazníka
+            List<ICommand> commands = new List<ICommand> { listUsersCommand, addCustomerCommand, deleteCustomerCommand, updateCustomerCommand };//přidaní do rozhraní
 
-            dao.Save(produkt);
+            CommandInterface commandInterface = new CommandInterface(commands); // Vytvoření instance CommandInterface tady v mainu
 
-            var all = dao.GetAll().ToList();
-
-            all.ForEach(a => Console.WriteLine(a));
+            commandInterface.RunCommand(); // Spuštění rozhraní 
         }
     }
 }
